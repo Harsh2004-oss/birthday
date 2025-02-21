@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: 'Bodoni Moda', serif;
+        }
+        body{
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(birthday.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container{
+            perspective: 1000px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        .card{
+            width: 280px;
+            height: 360px;
+            transition: 2s;
+            transform-style: preserve-3d;
+        }
+        .card:hover{
+            transform: rotateY(180deg);
+        }
+        .outside, .inside {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 20px;
+            text-align: center;
+            padding: 1.5rem;
+            backface-visibility: hidden;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+        .outside {
+            background-color: blanchedalmond;
+        }
+        .outside h1 {
+            font-size: 2.5rem;
+            color: salmon;
+            margin-bottom: 20px;
+        }
+        .inside{
+            background-color: rgb(255, 244, 79);
+            box-shadow: inset 0 5px 10px rgba(0,0,0,0.5);
+            transform: rotateY(180deg);
+        }
+        .inside h3{
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .frames{
+            width: 320px;
+            height: 150px;
+            box-shadow: 0 5px 10px rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 0.8rem;
+            position: relative;
+            right: 0;
+            margin-top: 0px;
+        }
+        .frames:hover{
+            background-color: yellow;
+        }
+        .frames img{
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+        }
+        .frames p{
+           font-size: 20px;
+           font-weight: bold;
+           transform: rotateY(190deg);
+        }
+        .block{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: flex-end;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .gift-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .gift-box {
+            font-size: 50px;
+            cursor: pointer;
+        }
+        .gift-card {
+            display: none;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+        }
+        .gift-card img {
+            width: 100px;
+            height: auto;
+            margin: 5px;
+        }
+        .gift-text {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+    <div class="container">
+        <div class="card">
+            <div class="outside">
+                <h1>Happy Birthday</h1>
+                <h3>My dear best friend, may God bless you with abundant joy on your birthday and always!<br>
+                    Thank you for always being by my side and having my back.</h3>
+            </div>
+            <div class="inside">
+                <img src="cakegif.gif"/>
+                <h3>Sending you an infinite amount of love, joy, and happiness on your birthday!
+                </h3>
+            </div>
+        </div>
+        <div class="block">
+            <div class="frames frame1">
+                <img src="arya.jpeg" alt="">
+                <p>Keep smiling, Keep shining</p>
+            </div>
+            <div class="frames frame2">
+                <img src="arya1.jpeg" alt="">
+                <p>On this occasion, bring you lots of happiness and success
+                </p>
+            </div>
+            <div class="frames frame3">
+                <img src="arya3.jpeg" alt="">
+                <p>May God bless you on your birthday, and always</p>
+            </div>
+        </div>
+    </div>
+    <div class="gift-container">
+        <div class="gift-box" onclick="openGift()">🎁</div>
+        <div class="gift-text">Here a gift for you</div>
+        <div class="gift-card" id="giftCard">
+            <h2>Surprise Gift!</h2>
+            <img src="gift1.png" alt="Gift Image 1">
+            <img src="gift2.png" alt="Gift Image 2">
+            <img src="gift3.png" alt="Gift Image 3">
+            <audio controls autoplay>
+                <source src="happy.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    <script>
+        function openGift() {
+            window.location.href = "wish.html"; // Navigate to the wish page
+        }
+    </script>
+    
+</body>
+</html>
